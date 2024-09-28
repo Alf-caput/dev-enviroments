@@ -11,7 +11,6 @@ FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y \
     openssh-server \
-    python3 \
     vim
 
 RUN mkdir /var/run/sshd
