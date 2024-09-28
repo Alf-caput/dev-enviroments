@@ -1,6 +1,9 @@
 # dev-enviroments
 Containers for developing in vscode
 
+Query to perplexity.ai: 
+- In depth guide on how to create a simple docker container and edit inside it using vscode ssh extension, only by having vscode installed in the host
+
 We will need vscode installed in the host machine with the extensions Remote - SSH and Remote - Containers
 
 ```bash
