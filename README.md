@@ -1,10 +1,10 @@
 ## DEV-ENVIROMENTS IN VSCODE
 
-The extension `ms-vscode-remote.remote-containers` from vscode isn't very consistent, and  when using build or open in container automatically creates undesired images with confusing names. 
+The extension `ms-vscode-remote.remote-containers` from vscode isn't very consistent, and when using build or open in container automatically creates undesired images with confusing names. 
 
-In this brief repository will be shown a cleaner approach to work with containers while avoiding creating Microsoft's images, so your enviroment is reproduceable by other developers easily (VS Code will be the editor of choice in this case and git will be the main feature).
+In this brief repository will be shown a cleaner approach to work with containers while avoiding creating Microsoft's images, so your enviroment is reproduceable by other developers easily (VS Code will be the editor of choice in this case and Git will be the main feature).
 
-Here are the steps someone that would like to contribute / work with our repositories will do:
+Here are the steps someone that would like to contribute / work should do:
 
 1. Installations
     - VS Code
@@ -17,7 +17,7 @@ Here are the steps someone that would like to contribute / work with our reposit
 
 3. Clone remote repository to local machine
 
-4. Build image from Dockerfile / Pull image from DockerHub
+4. Build image from Dockerfile / Pull image from remote
 
 5. Run container
     - Bind mount .gitconfig
@@ -26,7 +26,7 @@ Here are the steps someone that would like to contribute / work with our reposit
 
 6. Attach container to VS Code
     - Open workspace (only first time)
-    - Install extensions suggested by author (.vscode/)
+    - Install extensions suggested by author (defined at `.vscode/`)
 
 This guide will skip installing and setting up configurations.
 
@@ -53,7 +53,7 @@ RUN apt-get update && \
     apt-get install -y \
     git
 
-WORKDIR /workspace
+WORKDIR /root/workspace
 
 CMD ["/bin/sh"]
 
@@ -72,11 +72,15 @@ docker run \
     -d \
     -it \
     --name CONTAINER-NAME \
-    --volume /HOST/PATH/.gitconfig:/root/.gitconfig \
+    --volume /HOST/PATH/.gitconfig:/root/.gitconfig:ro \
     --volume .:/root/workspace \
     IMAGE-NAME
 ```
 
 Note: For ubuntu `/HOST/PATH/.gitconfig` is usually `~/.gitconfig`
 
-Now in VS Code open command palette (Ctrl+Shift+p) and use Dev Containers: Attach to running container
+Now in VS Code open command palette (Ctrl+Shift+p) and use `Dev Containers: Attach to running container ...` this will open a new instance of VS Code this time running inside the container, you can find your repository workspace at `/root/workspace/YOUR-REPOSITORY`.
+
+The next time you start/run a container with the same image name (which is inconsistent but is VS Code way of saving configurations) workspace selected folder, container extensions and other VS Code configurations related to the container will be reused.
+
+You can check your git credentials live in the container, host .gitconfig was copied to /root/.gitconfig in the container
