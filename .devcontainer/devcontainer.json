@@ -1,6 +1,6 @@
 {
     "image": "alfcaput/ubuntu-git-vscode",
-    "workspaceFolder": "/root",
+    "workspaceFolder": "/root/workspace",
     "runArgs": [
         "--name", "${localWorkspaceFolderBasename}-container"
     ]
