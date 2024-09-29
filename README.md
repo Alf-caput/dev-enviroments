@@ -7,26 +7,30 @@ In this brief repository will be shown a cleaner approach to work with container
 Here are the steps someone that would like to contribute / work should do:
 
 1. Installations
-    - VS Code
-    - Git
-    - Docker
+  - VS Code
+  - Git
+  - Docker
 
 2. Configurations
-    - .gitconfig
-    - ssh
+  - .gitconfig
+  - ssh
 
 3. Clone remote repository to local machine
 
 4. Build image from Dockerfile / Pull image from remote
 
 5. Run container
-    - Bind mount .gitconfig
-    - Bind mount ssh
-    - Bind mount repository
+  - Bind mount .gitconfig (readonly)
 
 6. Attach container to VS Code
-    - Open workspace (only first time)
-    - Install extensions suggested by author (defined at `.vscode/`)
+  - Open workspace (only first time)
+  - Install extensions suggested by author (defined at `.vscode/`)
+
+Update:
+
+6. Use `.devcontainer/devcontainer.json` and reopen in container
+  - Metadata in the image
+  
 
 This guide will skip installing and setting up configurations.
 
