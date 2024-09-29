@@ -112,4 +112,6 @@ Now in VS Code open command palette (Ctrl+Shift+p) and use `Dev Containers: Atta
 
 The next time you start/run a container with the same image name (which is inconsistent but is VS Code way of saving configurations) the workspace selected folder, container extensions and other VS Code configurations related to the container will be reused.
 
-You can check your git credentials live in the container, `.gitconfig` was bind mounted into `/root/.gitconfig` in the container
+You can check your git credentials live in the container, `.gitconfig` was bind mounted into `/root/.gitconfig` in the container.
+
+Furthermore if you authorized VS Code to interact with Github you can also push your changes to Github, which is great! We don't need to worry about forwarding ssh to the container from the host.
