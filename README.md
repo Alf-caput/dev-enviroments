@@ -61,6 +61,6 @@ CMD ["/bin/sh"]
 
 That done, the user will be able to build containers using the image, however, some considerations should be taken into account.
 
-The idea is to create an enviroment that only differs from the author in terms of credentials, this is extensions but also easily set user's credentials.
+The idea is to create an enviroment that only differs from the author in terms of credentials, this is extensions and also should be easy to set user's credentials in the container.
 
-For extensions it is possible to 
+For extensions it is possible to suggest them using .vscode/extensions.json
