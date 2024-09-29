@@ -52,13 +52,13 @@ Note: It is also possible to pull an existing image.
 Example:
 
 ```bash
-docker build -t alfcaput/ubuntu-git .
+docker build -t alfcaput/ubuntu-git-vscode .
 ```
 
 or
 
 ```bash
-docker pull -t alfcaput/ubuntu-git .
+docker pull -t alfcaput/ubuntu-git-vscode .
 ```
 
 The Dockerfile that is provided in this example is only suited for using git in ubuntu, but feel free to add further functionality:
@@ -72,11 +72,25 @@ RUN apt-get update && \
 
 WORKDIR /root/workspace
 
+LABEL devcontainer.metadata="{ \
+  \"customizations\": { \
+    \"vscode\": { \
+      \"settings\": { \
+        \"workbench.iconTheme\": \"vscode-icons\", \
+        \"files.insertFinalNewline\": true \
+      }, \
+      \"extensions\": [\"vscode-icons-team.vscode-icons\"] \
+    } \
+  } \
+}"
+
 COPY . .
 
 CMD ["/bin/sh"]
 
 ```
+
+IMPORTANT: Is not a well documented feature, but it is possible to set some VS Code configuration by using labels.
 
 That done, the user will be able to build containers using the image, however, some considerations should be taken into account.
 
@@ -105,7 +119,7 @@ docker run \
     -it \
     --name  dev-enviroments-container \
     --volume ~/.gitconfig:/root/.gitconfig:ro \
-    alfcaput/ubuntu-git
+    alfcaput/ubuntu-git-vscode
 ```
 
 Now in VS Code open command palette (Ctrl+Shift+p) and use `Dev Containers: Attach to running container ...` this will open a new instance of VS Code this time running inside the container, you can find your repository workspace at `/root/workspace/YOUR-REPOSITORY` (In this example `/root/workspace/dev-enviroments`).
