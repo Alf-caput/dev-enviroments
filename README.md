@@ -96,7 +96,7 @@ That done, the user will be able to build containers using the image, however, s
 
 The idea is to create an enviroment that only differs from the author in terms of credentials, this is extensions and also should be easy to set user's credentials in the container.
 
-For extensions it is possible to suggest them using .vscode/extensions.json
+For VS Code extensions and settings it is possible to add as metadata in the image.
 
 During runtime bind mounts are used for credentials and for the repository (Will be saved in /workspace directory of the container).
 
