@@ -57,9 +57,8 @@ docker build -t alfcaput/ubuntu-git .
 
 or
 
-
 ```bash
-docker build -t alfcaput/ubuntu-git .
+docker pull -t alfcaput/ubuntu-git .
 ```
 
 The Dockerfile that is provided in this example is only suited for using git in ubuntu, but feel free to add further functionality:
@@ -72,6 +71,8 @@ RUN apt-get update && \
     git
 
 WORKDIR /root/workspace
+
+COPY . .
 
 CMD ["/bin/sh"]
 
@@ -91,7 +92,6 @@ docker run \
     -it \
     --name CONTAINER-NAME \
     --volume /HOST/PATH/TO/.gitconfig:/root/.gitconfig:ro \
-    --volume .:/root/workspace \
     IMAGE-NAME
 ```
 
@@ -105,7 +105,6 @@ docker run \
     -it \
     --name  dev-enviroments-container \
     --volume ~/.gitconfig:/root/.gitconfig:ro \
-    --volume .:/root/workspace \
     alfcaput/ubuntu-git
 ```
 

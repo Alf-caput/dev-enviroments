@@ -6,4 +6,6 @@ RUN apt-get update && \
 
 WORKDIR /root/workspace
 
+COPY . .
+
 CMD ["/bin/sh"]
