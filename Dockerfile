@@ -4,6 +4,6 @@ RUN apt-get update && \
     apt-get install -y \
     git
 
-WORKDIR /workspace
+WORKDIR /root/workspace
 
 CMD ["/bin/sh"]

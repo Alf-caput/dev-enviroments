@@ -73,8 +73,10 @@ docker run \
     -it \
     --name CONTAINER-NAME \
     --volume /HOST/PATH/.gitconfig:/root/.gitconfig \
-    --volume .:/workspace \
+    --volume .:/root/workspace \
     IMAGE-NAME
 ```
 
-Note: For ubuntu /HOST/PATH/.gitconfig is ~/.gitconfig
+Note: For ubuntu `/HOST/PATH/.gitconfig` is usually `~/.gitconfig`
+
+Now in VS Code open command palette (Ctrl+Shift+p) and use Dev Containers: Attach to running container
