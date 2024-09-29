@@ -1,7 +1,9 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && \
+    apt-get install -y \
+    git
 
-COPY GIT_CONFIG_PATH dest
+WORKDIR /workspace
 
-CMD ["bash"]
+CMD ["/bin/sh"]
