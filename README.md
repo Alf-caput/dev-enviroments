@@ -114,4 +114,4 @@ The next time you start/run a container with the same image name (which is incon
 
 You can check your git credentials live in the container, `.gitconfig` was bind mounted into `/root/.gitconfig` in the container.
 
-Furthermore if you authorized VS Code to interact with Github you can also push your changes to Github, which is great! We don't need to worry about forwarding ssh to the container from the host.
+Furthermore if you authorized VS Code to interact with Github you can also push your changes to Github using VS Code integrated terminal. We don't need to worry about forwarding ssh to the container from the host making it super easy to develop inside the container.
