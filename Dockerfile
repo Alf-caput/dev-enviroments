@@ -6,6 +6,18 @@ RUN apt-get update && \
 
 WORKDIR /root/workspace
 
+LABEL devcontainer.metadata="{ \
+  \"customizations\": { \
+    \"vscode\": { \
+      \"settings\": { \
+        \"workbench.iconTheme\": \"vscode-icons\", \
+        \"files.insertFinalNewline\": true \
+      }, \
+      \"extensions\": [\"vscode-icons-team.vscode-icons\"] \
+    } \
+  } \
+}"
+
 COPY . .
 
 CMD ["/bin/sh"]
