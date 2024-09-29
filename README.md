@@ -124,6 +124,8 @@ docker run \
 
 Now in VS Code open command palette (Ctrl+Shift+p) and use `Dev Containers: Attach to running container ...` this will open a new instance of VS Code this time running inside the container, you can find your repository workspace at `/root/workspace/YOUR-REPOSITORY` (In this example `/root/workspace/dev-enviroments`).
 
+Update: It is possible to add metadata in the image as a label, but some is not available consistently (maybe can be spotted) for example default `workspaceFolder` to open in the container instance of VS Code, by adding the extra `.devcontainers/devcontainer.json` we get that functionality at the cost of VS Code automatically generating the volume vscode. Being able to use a devcontainer.json enables to use the command `Dev Containers: Rebuild and Reopen in Container` among others. Maybe it is starting to get cumbersome by having all this folders and the extra volume (with attach approach we don't generate that volume) but commands inside the editor are more intuitive.
+
 The next time you start/run a container with the same image name (which is inconsistent but is VS Code way of saving configurations) the workspace selected folder, container extensions and other VS Code configurations related to the container will be reused.
 
 You can check your git credentials live in the container, `.gitconfig` was bind mounted into `/root/.gitconfig` in the container.
