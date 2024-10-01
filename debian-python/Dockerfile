@@ -1,11 +1,10 @@
-# https://hub.docker.com/r/alfcaput/ubuntu-git-vscode
-# docker pull alfcaput/ubuntu-git-vscode
-FROM ubuntu:latest
+# https://hub.docker.com/r/alfcaput/debian-git-python-vscode
+# docker pull alfcaput/debian-git-python-vscode
+FROM python:slim-bullseye
 
 RUN apt-get update && \
     apt-get install -y \
-    git \
-    python
+    git
 
 WORKDIR /root/workspace
 
@@ -20,7 +19,11 @@ LABEL devcontainer.metadata="{ \
         \"workbench.iconTheme\": \"vscode-icons\", \
         \"files.insertFinalNewline\": true \
       }, \
-      \"extensions\": [\"vscode-icons-team.vscode-icons\"] \
+      \"extensions\": [ \
+        \"vscode-icons-team.vscode-icons\" \
+        \"donjayamanne.python-extension-pack\" \
+        \"ms-toolsai.jupyter\" \
+      ] \
     } \
   } \
 }"

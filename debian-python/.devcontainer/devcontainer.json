@@ -1,5 +1,5 @@
 {
-    "image": "alfcaput/ubuntu-git-python-vscode",
+    "image": "alfcaput/debian-git-python-vscode:slim-bullseye",
     "workspaceFolder": "/root/workspace",
     "runArgs": [
         "--name", "${localWorkspaceFolderBasename}-container"
