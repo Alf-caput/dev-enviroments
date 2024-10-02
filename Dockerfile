@@ -15,7 +15,9 @@ LABEL devcontainer.metadata="{ \
         \"workbench.iconTheme\": \"vscode-icons\", \
         \"files.insertFinalNewline\": true \
       }, \
-      \"extensions\": [\"vscode-icons-team.vscode-icons\"] \
+      \"extensions\": [ \
+        \"vscode-icons-team.vscode-icons\", \
+      ] \
     } \
   } \
 }"
