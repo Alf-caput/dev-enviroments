@@ -1,4 +1,5 @@
 {
+    "name": "${localWorkspaceFolderBasename}",
     "dockerFile": "../Dockerfile",
     "customizations": {
         "vscode": {
