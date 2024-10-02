@@ -1,0 +1,32 @@
+{
+    "name": "${localWorkspaceFolderBasename}",
+    "dockerFile": "../Dockerfile",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                // VS Code
+                "files.insertFinalNewline": true,
+                // vscode-icons
+                "workbench.iconTheme": "vscode-icons",
+                //Python
+                "python.terminal.executeInFileDir": true,
+                // Code Runner
+                "code-runner.fileDirectoryAsCwd": true,    
+                "code-runner.runInTerminal": true
+            },
+            "extensions": [
+                // vscode-icons
+                "vscode-icons-team.vscode-icons",
+                // Python
+                "donjayamanne.python-extension-pack",
+                // Code Runner
+                "formulahendry.code-runner"
+            ]
+        }
+    },
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+    "runArgs": [
+        "--name", "${localWorkspaceFolderBasename}-container"
+    ]
+}
