@@ -1,5 +1,3 @@
-# https://hub.docker.com/r/alfcaput/ubuntu-git-vscode
-# docker pull alfcaput/ubuntu-git-vscode
 FROM ubuntu:latest
 
 RUN apt-get update && \
