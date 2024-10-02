@@ -1,5 +1,32 @@
 {
-    "image": "alfcaput/debian-git-python-vscode:slim-bullseye",
+    "dockerFile": "../Dockerfile",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                // VS Code
+                "files.insertFinalNewline": true,
+                // vscode-icons
+                "workbench.iconTheme": "vscode-icons",
+                //Python
+                "python.terminal.executeInFileDir": true,
+                // Jupyter
+                "notebook.lineNumbers": "on",
+                // Code Runner
+                "code-runner.fileDirectoryAsCwd": true,    
+                "code-runner.runInTerminal": true
+            },
+            "extensions": [
+                // vscode-icons
+                "vscode-icons-team.vscode-icons",
+                // Python
+                "donjayamanne.python-extension-pack",
+                // Jupyter
+                "ms-toolsai.jupyter",
+                // Code Runner
+                "formulahendry.code-runner"
+            ]
+        }
+    },
     "workspaceFolder": "/root/workspace",
     "runArgs": [
         "--name", "${localWorkspaceFolderBasename}-container"
