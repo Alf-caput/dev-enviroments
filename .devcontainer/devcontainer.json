@@ -1,5 +1,5 @@
 {
-    "image": "../Dockerfile",
+    "dockerFile": "../Dockerfile",
     "workspaceFolder": "/root/workspace",
     "runArgs": [
         "--name", "${localWorkspaceFolderBasename}-container"
