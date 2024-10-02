@@ -1,5 +1,16 @@
 {
     "dockerFile": "../Dockerfile",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "workbench.iconTheme": "vscode-icons",
+                "files.insertFinalNewline": true
+            },
+            "extensions": [
+                "vscode-icons-team.vscode-icons"
+            ]
+        }
+    },
     "workspaceFolder": "/root/workspace",
     "runArgs": [
         "--name", "${localWorkspaceFolderBasename}-container"
