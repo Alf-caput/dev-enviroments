@@ -1,11 +1,8 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
-RUN apt-get update && \
-    apt-get install -y \
-    git
+RUN apk update && \
+    apk add --no-cache git
 
-WORKDIR /root/workspace
-
-COPY . .
+WORKDIR /workspace
 
 CMD ["/bin/sh"]

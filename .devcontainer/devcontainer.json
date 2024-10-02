@@ -3,15 +3,19 @@
     "customizations": {
         "vscode": {
             "settings": {
-                "workbench.iconTheme": "vscode-icons",
-                "files.insertFinalNewline": true
+                // VS Code
+                "files.insertFinalNewline": true,
+                // vscode-icons
+                "workbench.iconTheme": "vscode-icons"
             },
             "extensions": [
+                // vscode-icons
                 "vscode-icons-team.vscode-icons"
             ]
         }
     },
-    "workspaceFolder": "/root/workspace",
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
     "runArgs": [
         "--name", "${localWorkspaceFolderBasename}-container"
     ]

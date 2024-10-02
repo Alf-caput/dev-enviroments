@@ -1,4 +1,5 @@
 {
+    "name": "${localWorkspaceFolderBasename}",
     "dockerFile": "../Dockerfile",
     "customizations": {
         "vscode": {
@@ -28,8 +29,8 @@
         }
     },
     "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
     "runArgs": [
-        "--name", "${localWorkspaceFolderBasename}-container",
-        "--mount", "type=bind,source=..,target=/workspace"
+        "--name", "${localWorkspaceFolderBasename}-container"
     ]
 }
