@@ -27,8 +27,9 @@
             ]
         }
     },
-    "workspaceFolder": "/root/workspace",
+    "workspaceFolder": "/workspace",
     "runArgs": [
-        "--name", "${localWorkspaceFolderBasename}-container"
+        "--name", "${localWorkspaceFolderBasename}-container",
+        "--mount", "type=bind,source=..,target=/workspace"
     ]
 }
