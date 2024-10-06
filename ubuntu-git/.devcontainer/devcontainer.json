@@ -8,6 +8,8 @@
                 "files.insertFinalNewline": true,
                 // vscode-icons
                 "workbench.iconTheme": "vscode-icons"
+                // bash
+                // "terminal.integrated.fontFamily": "MesloLGM Nerd Font"
             },
             "extensions": [
                 // vscode-icons
