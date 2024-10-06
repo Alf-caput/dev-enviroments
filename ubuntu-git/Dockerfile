@@ -16,8 +16,5 @@ RUN wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes
 # Set up Oh My Posh configuration
 RUN echo 'eval "$(oh-my-posh init bash --config ~/.poshthemes/probua.minimal.omp.json)"' >> ~/.bashrc
 
-# Set the default shell to bash
-SHELL ["/bin/bash", "-c"]
-
 # Set the entry point to start a bash shell
 ENTRYPOINT ["/bin/bash"]
