@@ -13,15 +13,6 @@ RUN chmod +x /usr/local/bin/oh-my-posh
 RUN mkdir -p ~/.poshthemes
 RUN wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/probua.minimal.omp.json -O ~/.poshthemes/probua.minimal.omp.json
 
-# Add python virtual enviroments display capability
-RUN sed -i '/      "segments": \[/a \
-        {\
-          "type": "text",\
-          "style": "plain",\
-          "foreground": "#42a9ff",\
-          "template": "{{ if .Env.VIRTUAL_ENV }}({{ base .Env.VIRTUAL_ENV }}) {{ end }}"\
-        },' ~/.poshthemes/probua.minimal.omp.json
-
 # Set up Oh My Posh configuration
 RUN echo 'eval "$(oh-my-posh init bash --config ~/.poshthemes/probua.minimal.omp.json)"' >> ~/.bashrc
 
