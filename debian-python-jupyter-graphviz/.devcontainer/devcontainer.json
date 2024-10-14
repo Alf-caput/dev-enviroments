@@ -12,6 +12,7 @@
                 "python.terminal.executeInFileDir": true,
                 // Jupyter
                 "notebook.lineNumbers": "on",
+                "jupyter.notebookFileRoot": "${workspaceFolder}",
                 // Code Runner
                 "code-runner.fileDirectoryAsCwd": true,    
                 "code-runner.runInTerminal": true
