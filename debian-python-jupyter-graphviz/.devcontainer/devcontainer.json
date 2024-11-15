@@ -13,6 +13,7 @@
                 // Jupyter
                 "notebook.lineNumbers": "on",
                 "jupyter.notebookFileRoot": "${workspaceFolder}",
+                // Note: "${fileDirName}" doesn't work for containers
                 // Code Runner
                 "code-runner.fileDirectoryAsCwd": true,    
                 "code-runner.runInTerminal": true
